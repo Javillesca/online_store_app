@@ -5,6 +5,7 @@ INJECTED from D:\FlutterProjects\online_store_app\android\app\src\main\AndroidMa
 INJECTED from D:\FlutterProjects\online_store_app\android\app\src\main\AndroidManifest.xml:1:1-47:12
 INJECTED from D:\FlutterProjects\online_store_app\android\app\src\main\AndroidManifest.xml:1:1-47:12
 MERGED from D:\FlutterProjects\online_store_app\android\app\src\main\AndroidManifest.xml:1:1-47:12
+MERGED from [:shared_preferences] D:\FlutterProjects\online_store_app\build\shared_preferences\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [:image_picker] D:\FlutterProjects\online_store_app\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-22:12
 MERGED from [:flutter_plugin_android_lifecycle] D:\FlutterProjects\online_store_app\build\flutter_plugin_android_lifecycle\intermediates\library_manifest\debug\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\JoseJ\.gradle\caches\transforms-2\files-2.1\412798c5ff5129715d71e58ff213e3a7\fragment-1.1.0\AndroidManifest.xml:17:1-24:12
@@ -99,6 +100,8 @@ uses-sdk
 INJECTED from D:\FlutterProjects\online_store_app\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\FlutterProjects\online_store_app\android\app\src\main\AndroidManifest.xml
 INJECTED from D:\FlutterProjects\online_store_app\android\app\src\main\AndroidManifest.xml
+MERGED from [:shared_preferences] D:\FlutterProjects\online_store_app\build\shared_preferences\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
+MERGED from [:shared_preferences] D:\FlutterProjects\online_store_app\build\shared_preferences\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:image_picker] D:\FlutterProjects\online_store_app\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:image_picker] D:\FlutterProjects\online_store_app\build\image_picker\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44
 MERGED from [:flutter_plugin_android_lifecycle] D:\FlutterProjects\online_store_app\build\flutter_plugin_android_lifecycle\intermediates\library_manifest\debug\AndroidManifest.xml:5:5-44

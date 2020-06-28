@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:onlinestorecapp/src/blocs/provider.dart';
+import 'package:onlinestorecapp/src/providers/user_provider.dart';
+import 'package:onlinestorecapp/src/utils/utils.dart' as utils;
 
 class LoginPage extends StatelessWidget {
+
+  final userProvider = new UserProvider();
+
   @override
   Widget build(BuildContext context) {
 
@@ -104,9 +109,11 @@ class LoginPage extends StatelessWidget {
             ),
           ),
 
-          Text('Recuperar Contraseña'),
+          FlatButton(
+            child: Text('Crear una nueva cuenta'),
+            onPressed: () => Navigator.pushReplacementNamed(context, 'signup'),
+          ),
           SizedBox(height: 100.0)
-
         ],
       ),
     );
@@ -176,12 +183,13 @@ class LoginPage extends StatelessWidget {
     );
   }
 
-  _login(BuildContext context, LoginBloc bloc) {
-    print('==========================');
-    print('Email: ${bloc.email}');
-    print('Password: ${bloc.password}');
-    print('==========================');
-    Navigator.pushNamed(context, 'home');
+  _login(BuildContext context, LoginBloc bloc) async {
+    Map info = await userProvider.login(bloc.email, bloc.password);
+    if(info['ok']) {
+      Navigator.pushNamed(context, 'home');
+    } else {
+      utils.showAlert(context, 'Error al inciar sesión', info);
+    }
   }
 
 }

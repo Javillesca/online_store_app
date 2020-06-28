@@ -4,13 +4,15 @@ import 'package:http/http.dart' as http;
 import 'package:http_parser/http_parser.dart';
 import 'package:onlinestorecapp/src/models/instrument_model.dart';
 import 'package:mime_type/mime_type.dart';
+import 'package:onlinestorecapp/src/user_preferences/user_preferences.dart';
 
 
 class InstrumentsProvider {
   final String _url = 'https://online-store-220991.firebaseio.com';
+  final _prefs = new UserPreferences();
 
   Future<bool> createInstrument(InstrumentModel instrument) async {
-    final url  = '$_url/instruments.json';
+    final url  = '$_url/instruments.json?auth=${_prefs.token}';
     final resp = await http.post(url, body: instrumentModelToJson(instrument));
 
     final decodedData = json.decode(resp.body);
@@ -19,7 +21,7 @@ class InstrumentsProvider {
   }
 
   Future<bool> updateInstrument(InstrumentModel instrument) async {
-    final url  = '$_url/instruments/${instrument.id}.json';
+    final url  = '$_url/instruments/${instrument.id}.json?auth=${_prefs.token}';
     final resp = await http.put(url, body: instrumentModelToJson(instrument));
 
     final decodedData = json.decode(resp.body);
@@ -28,7 +30,7 @@ class InstrumentsProvider {
   }
 
   Future<List<InstrumentModel>> loadInstruments() async {
-    final url  = '$_url/instruments.json';
+    final url  = '$_url/instruments.json?auth=${_prefs.token}';
     final resp = await http.get(url);
     final List<InstrumentModel> instruments = new List();
     final Map<String, dynamic> decodedData = json.decode(resp.body);
@@ -44,7 +46,7 @@ class InstrumentsProvider {
   }
 
   Future<int> deleteInstrument(String id) async {
-    final url = '$_url/instruments/$id.json';
+    final url = '$_url/instruments/$id.json?auth=${_prefs.token}';
     final resp = await http.delete(url);
 
     return 1;
@@ -73,6 +75,5 @@ class InstrumentsProvider {
     final respData = json.decode(resp.body);
     print(respData);
     return respData['secure_url'];
-    //https://res.cloudinary.com/diwnlzjar/image/upload/v1593253337/nrdtqdk2xmgckjqhgw7o.jpg
   }
 }

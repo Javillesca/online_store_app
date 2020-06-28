@@ -32,6 +32,7 @@ dependencies:
   http: ^0.12.1
   image_picker: ^0.6.7+2
   mime_type: ^0.3.2
+  shared_preferences: ^0.5.7+3
 
 dev_dependencies:
   flutter_test:
@@ -50,7 +51,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-   - assets/
+    - assets/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
